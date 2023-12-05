@@ -1,8 +1,11 @@
+import Hero from "../components/Hero";
+
 const Home = () => {
 	return (
 		<div className='page w-full'>
-			<section className='page__section hero-section'>
 
+			<section className='page__section hero-section'>
+				<Hero/>
 			</section>
 
 			<section className='page__section cost-efficiency-section'>

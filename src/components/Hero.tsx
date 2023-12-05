@@ -6,10 +6,10 @@ const Hero = () => {
 					<div className='flex gap-7 items-center mt-32'>
 						<img src='/assets/images/home/logo.svg' alt='' className='w-[108px] h-auto'/>
 						<div className='bg-gradient-to-r from-gradient-1 to-gradient-2 bg-clip-text text-9xl text-transparent'>
-							<p className='text-8xl font-extrabold'>PION</p><p className='text-5xl text-center font-semibold'>Network</p></div>
+							<p className='text-8xl font-extrabold'>PION</p><p className='text-5xl text-center font-semibold'>NETWORK</p></div>
 					</div>
 					<p className='text-white text-5xl text-center'> vs </p>
-					<p className='text-white font-bold text-[68px] text-center'> Blockchain </p>
+					<p className='text-white font-bold text-[68px] text-center leading-[68px]'> Blockchain </p>
 				</div>
 				<div>
 					<img src='/assets/images/home/hero-illustration.svg' alt=''/>

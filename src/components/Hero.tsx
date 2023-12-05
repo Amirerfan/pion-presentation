@@ -26,7 +26,7 @@ const Hero = () => {
 						className='font-medium text-[28px] leading-[28px] text-white text-center transition-all group-hover:text-[46px] group-hover:leading-[46px] group-hover:text-primary-l1'>Cost <br/>Efficiency</h3>
 					</div>
 				<span
-					className='animated-border absolute top-0 w-full h-full border-4 border-dashed rounded-full border-primary-l1 pointer-events-none transition-all duration-300 group-hover:rotate-[10deg]'></span>
+					className='animated-border absolute top-0 w-full h-full border-4 border-dashed rounded-full border-primary-l1 pointer-events-none transition-all group-hover:rotate-[60deg]'></span>
 			</span>
 		</div>
 	)

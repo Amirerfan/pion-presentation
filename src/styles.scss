@@ -2,3 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+.page {
+  @apply max-h-screen overflow-y-auto overscroll-y-contain snap-y snap-mandatory;
+
+  &__section {
+    @apply w-full h-screen snap-center;
+  }
+}

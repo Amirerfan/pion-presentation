@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
-import CostEfficiency from "../components/cost-efficiency";
+import CostEfficiency from "../components/CostEfficiency";
+import RealTimeData from "../components/RealTimeData";
 
 const Home = () => {
 	return (
@@ -14,11 +15,7 @@ const Home = () => {
 			</section>
 
 			<section className='page__section real-time-data-section'>
-
-			</section>
-
-			<section className='page__section more-about-pion-section'>
-
+				<RealTimeData />
 			</section>
 		</div>
 	)

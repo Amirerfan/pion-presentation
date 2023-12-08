@@ -9,7 +9,11 @@ module.exports = {
         noto: ['NotoSerifSC', 'sans-serif'],
       },
       colors: {
+        'primary': '#4D3E9E',
         'primary-l1': '#918EF5',
+        'primary-l3': '#CDC9FD',
+        'xyz-75': '#E9EFF6BF',
+        'green': '#B7F03C',
         'body-bg': '#11070E',
         'gradient-1': '#5B4FEC',
         'gradient-2': '#DFA891',

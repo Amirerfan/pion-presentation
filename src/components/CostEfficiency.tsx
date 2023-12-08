@@ -1,6 +1,6 @@
 const CostEfficiency = () => {
 	return (
-		<div className='hero flex flex-col w-full h-full items-center relative justify-center'>
+		<div className='cost-efficiency flex flex-col w-full h-full items-center relative justify-center'>
 			<table className='table rounded-3xl overflow-hidden'>
 				<thead className='bg-element-header'>
 				<tr>

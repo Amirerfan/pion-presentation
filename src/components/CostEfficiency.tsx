@@ -1,6 +1,6 @@
 const CostEfficiency = () => {
 	return (
-		<div className='cost-efficiency flex flex-col w-full h-full items-center relative justify-center'>
+		<div id='cost-efficiency' className='cost-efficiency flex flex-col w-full h-full items-center relative justify-center'>
 			<table className='table rounded-3xl overflow-hidden'>
 				<thead className='bg-element-header'>
 				<tr>
@@ -67,13 +67,15 @@ const CostEfficiency = () => {
 
 				<tr className='text-white pl-9 pr-8'>
 					<td colSpan={4} className='py-8 pl-9 text-gray-l1'>Fee costs are
-						calculated in real-time using smart contracts on <span className='text-primary-l1'>Ethereum</span> and <span className='text-primary-l1'>Solana</span>.
+						calculated in real-time using smart contracts on <span className='text-primary-l1'>Ethereum</span> and <span
+							className='text-primary-l1'>Solana</span>.
 					</td>
 				</tr>
 				</tbody>
 			</table>
 
-			<span className='animate-link absolute bottom-0 translate-y-1/2 hover:translate-y-10 transition-all group'>
+			<span className='animate-link absolute bottom-0 translate-y-1/2 hover:translate-y-10 transition-all group'
+			      onClick={() => document.getElementById('real-time-data')?.scrollIntoView({behavior: "smooth",block: "start", inline: "start"})}>
 				<div
 					className='cursor-pointer flex flex-col gap-4 relative w-60 h-60 group-hover:w-[309px] group-hover:h-[309px] transition-all items-center justify-center '>
 					<p

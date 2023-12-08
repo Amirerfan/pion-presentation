@@ -31,7 +31,7 @@ const RealTimeData = () => {
 	}
 
 	return (
-		<div className='real-time-data flex flex-col w-full h-full items-center justify-center relative'>
+		<div id='real-time-data' className='real-time-data flex flex-col w-full h-full items-center justify-center relative'>
 			<section className='real-time-data-body flex flex-col gap-6'>
 				<p className='text-white text-xl font-bold text-left'>PION enables you to get Real-time data in a secure and
 					decentralized way. </p>

@@ -17,7 +17,7 @@ const Hero = () => {
 				</div>
 			</div>
 
-			<span className='animate-link absolute bottom-4 group'>
+			<span className='animate-link absolute bottom-4 group' onClick={() => document.getElementById('cost-efficiency')?.scrollIntoView({behavior: "smooth",block: "start", inline: "start"})}>
 				<div
 					className='cursor-pointer flex flex-col gap-4 relative w-60 h-60 group-hover:w-[309px] group-hover:h-[309px] transition-all items-center justify-center '>
 					<p

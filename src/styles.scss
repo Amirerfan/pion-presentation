@@ -17,3 +17,8 @@ body {
     @apply w-full h-screen snap-center;
   }
 }
+
+.pion-logo {
+  mask: url('../public/assets/images/home/more-about-pion-logo.svg') no-repeat center;
+  -webkit-mask: url('../public/assets/images/home/more-about-pion-logo.svg') no-repeat center;
+}

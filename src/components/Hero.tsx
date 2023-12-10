@@ -14,10 +14,12 @@ const Hero = () => {
 			animateLinkHero.style.transform = `translateY(${translate}%)`;
 		}
 
-		if (offset > windowHeight/2) {
+		if (offset > windowHeight / 2) {
 			document.getElementById('cost-efficiency-link-text')?.classList.add('!text-primary-l1');
+			document.getElementById('cost-efficiency-link-number')?.classList.add('!text-primary-l1');
 		} else {
 			document.getElementById('cost-efficiency-link-text')?.classList.remove('!text-primary-l1');
+			document.getElementById('cost-efficiency-link-number')?.classList.remove('!text-primary-l1');
 		}
 
 	}, [offset, windowHeight]);
@@ -53,11 +55,12 @@ const Hero = () => {
 				      inline: "start"
 			      })}>
 				<div
-					className='cursor-pointer flex flex-col gap-4 relative w-60 h-60 group-hover:w-[309px] group-hover:h-[309px] transition-all items-center justify-center '>
+					className='cursor-pointer flex flex-col gap-4 relative w-60 h-60 group-hover:w-64 group-hover:h-64 transition-all items-center justify-center '>
 					<p
-						className='font-extrabold text-8xl mx-auto text-white group-hover:text-primary-l1 transition-all -mt-10 group-hover:text-[108px]'>{1}</p>
+						id='cost-efficiency-link-number'
+						className='font-extrabold text-8xl mx-auto text-white group-hover:text-primary-l1 transition-all -mt-10'>{1}</p>
 					<h3 id='cost-efficiency-link-text'
-					    className='font-medium text-[28px] leading-[28px] text-white text-center transition-all group-hover:text-[46px] group-hover:leading-[46px] group-hover:text-primary-l1'>Cost <br/>Efficiency</h3>
+					    className='font-medium text-[28px] leading-[28px] text-white text-center transition-all group-hover:text-3xl group-hover:leading-[30px] group-hover:text-primary-l1'>Cost <br/>Efficiency</h3>
 					</div>
 				<span
 					className='animated-border absolute top-0 w-full h-full border-4 border-dashed rounded-full border-primary-l1 pointer-events-none transition-all group-hover:rotate-[60deg]'></span>

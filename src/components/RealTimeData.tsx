@@ -1,5 +1,5 @@
 import TextArea from "./TextInput";
-import {useState} from "react";
+import {useCallback, useEffect, useMemo, useState} from "react";
 
 const RealTimeData = () => {
 	const [question, setQuestion] = useState('');
@@ -30,9 +30,43 @@ const RealTimeData = () => {
 		}, 3200);
 	}
 
+	const [hoverState, setHoverState] = useState(false);
+
+	useEffect(() => {
+		document.getElementById('animated-link-real-time')?.addEventListener('mouseenter', () => {
+			setHoverState(true);
+		});
+		document.getElementById('animated-link-real-time')?.addEventListener('mouseleave', () => {
+			setHoverState(false);
+		});
+	}, []);
+
+	const windowHeight = useMemo(() => window.innerHeight, []);
+	const [offset, setOffset] = useState(0);
+
+	const onScroll = useCallback((event: any) => {
+		setOffset(Math.round(document.getElementById('page')?.scrollTop || 0));
+
+		if (offset > 3 * windowHeight / 2) {
+			document.getElementById('real-time-link-text')?.classList.add('!text-primary-l1');
+			document.getElementById('real-time-link-number')?.classList.add('!text-primary-l1');
+		} else {
+			document.getElementById('real-time-link-text')?.classList.remove('!text-primary-l1');
+			document.getElementById('real-time-link-number')?.classList.remove('!text-primary-l1');
+		}
+
+	}, [offset, windowHeight]);
+
+	useEffect(() => {
+		document.removeEventListener('scroll', onScroll);
+		document.addEventListener('scroll', onScroll, true);
+		return () => document.removeEventListener('scroll', onScroll);
+	}, [onScroll]);
+
 	return (
-		<div id='real-time-data' className='real-time-data flex flex-col w-full h-full items-center justify-center relative'>
-			<section className='real-time-data-body flex flex-col gap-6'>
+		<div id='real-time-data'
+		     className='real-time-data flex flex-col w-full h-full items-center justify-center relative'>
+			<section className={`real-time-data-body flex flex-col gap-6 transition-all ${hoverState && '-translate-y-11'}`}>
 				<p className='text-white text-xl font-bold text-left'>PION enables you to get Real-time data in a secure and
 					decentralized way. </p>
 				<div className='flex gap-8 w-[928px]'>
@@ -81,20 +115,22 @@ const RealTimeData = () => {
 								{loading ? <div className='flex items-center w-full text-primary-l3 gap-2'>
 									<img src='/assets/images/home/right-double-arrow.svg' alt=''/> <p>...</p>
 								</div> : <div className='flex items-center w-full gap-2'>
-									<img src='/assets/images/home/right-double-arrow.svg' alt=''/><p className='font-medium text-primary-l3'>{result}</p>
+									<img src='/assets/images/home/right-double-arrow.svg' alt=''/><p
+									className='font-medium text-primary-l3'>{result}</p>
 								</div>}
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<span className='animate-link absolute bottom-0 translate-y-1/2 hover:translate-y-10 transition-all group'>
+
+			<span id='animated-link-real-time'
+			      className='animate-link absolute bottom-0 translate-y-1/2 hover:translate-y-14 transition-all group'>
 				<div
-					className='cursor-pointer flex flex-col gap-4 relative w-60 h-60 group-hover:w-[309px] group-hover:h-[309px] transition-all items-center justify-center '>
-				<img src='/assets/images/home/more-about-pion-logo.svg' className='w-11 group-hover:w-14 transition-all'
-				     alt=''/>
+					className='cursor-pointer flex flex-col gap-4 relative w-60 h-60 group-hover:w-64 group-hover:h-64 transition-all items-center justify-center '>
+				<div className='pion-logo w-11 h-[52px] transition-all group-hover:bg-primary-l1 bg-white'/>
 				<h3
-					className='font-medium text-[28px] leading-[28px] text-white text-center transition-all group-hover:text-[46px] group-hover:leading-[46px] group-hover:text-primary-l1'>More About<br/>PION</h3>
+					className='font-medium text-[28px] leading-[28px] text-white text-center transition-all group-hover:text-3xl group-hover:leading-[30px] group-hover:text-primary-l1'>More About<br/>PION</h3>
 				</div>
 				<span
 					className='animated-border absolute top-0 w-full h-full border-4 border-dashed rounded-full border-primary-l1 pointer-events-none transition-all group-hover:rotate-[60deg]'></span>

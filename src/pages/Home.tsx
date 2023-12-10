@@ -4,8 +4,7 @@ import RealTimeData from "../components/RealTimeData";
 
 const Home = () => {
 	return (
-		<div className='page w-full'>
-
+		<div id='page' className='page w-full'>
 			<section className='page__section hero-section'>
 				<Hero />
 			</section>
